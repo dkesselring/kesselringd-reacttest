@@ -10,10 +10,34 @@ function App() {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (inputValue.trim()) {
+      // Add to local history
       setInputHistory([...inputHistory, inputValue]);
+      
+      // Log to database
+      try {
+        const response = await fetch('http://localhost:3001/api/log-input', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            input: inputValue,
+            userId: 'user-1', // You can make this dynamic later
+          }),
+        });
+        
+        if (response.ok) {
+          console.log('Input logged to database successfully');
+        } else {
+          console.error('Failed to log input to database');
+        }
+      } catch (error) {
+        console.error('Error logging to database:', error);
+      }
+      
       setInputValue('');
     }
   };
