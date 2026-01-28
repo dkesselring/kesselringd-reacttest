@@ -5,7 +5,11 @@
 }
 
 .main-container {
-  @apply flex h-full;
+  @apply flex flex-col h-full;
+}
+
+.top-section {
+  @apply flex flex-[2] h-2/3;
 }
 
 .App-logo {
@@ -62,4 +66,61 @@
 
 .output-item {
   @apply bg-gray-800 p-4 rounded border-l-4 border-cyan-400 text-left break-words whitespace-pre-wrap text-sm;
+}
+
+/* Database Panel Styles */
+.db-panel {
+  @apply bg-gray-800 flex-1 h-1/3 flex flex-col border-t-2 border-cyan-400 p-6 overflow-hidden;
+}
+
+.db-panel-header {
+  @apply flex justify-between items-center mb-4;
+}
+
+.db-title {
+  @apply text-xl font-bold text-cyan-400;
+}
+
+.refresh-button {
+  @apply px-4 py-2 bg-cyan-400 text-gray-900 rounded font-bold cursor-pointer transition-colors hover:bg-cyan-500 active:bg-cyan-600 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.table-container {
+  @apply bg-gray-900 rounded-lg border-2 border-cyan-400 overflow-auto flex-1;
+}
+
+.logs-table {
+  @apply w-full text-sm text-white font-mono border-collapse;
+}
+
+.logs-table thead {
+  @apply sticky top-0 bg-gray-800 border-b-2 border-cyan-400;
+}
+
+.logs-table th {
+  @apply p-3 text-left text-cyan-400 font-bold border-r border-gray-700;
+}
+
+.logs-table th:last-child {
+  @apply border-r-0;
+}
+
+.logs-table tbody tr {
+  @apply border-b border-gray-700 hover:bg-gray-800 transition-colors;
+}
+
+.logs-table td {
+  @apply p-3 text-left border-r border-gray-700 break-words;
+}
+
+.logs-table td:last-child {
+  @apply border-r-0;
+}
+
+.logs-table tbody tr:last-child {
+  @apply border-b-0;
+}
+
+.input-cell {
+  @apply max-w-xs truncate;
 }

@@ -1,9 +1,0 @@
- id |         timestamp          | event_type  |                              event_data                              
-----+----------------------------+-------------+----------------------------------------------------------------------
-  1 | 2026-01-28 15:13:04.983+00 | login       | {"userId": 1, "success": true}
-  2 | 2026-01-28 15:14:04.983+00 | user_action | {"action": "view_dashboard", "userId": 1, "duration": 30}
-  3 | 2026-01-28 15:15:04.983+00 | logout      | {"userId": 1, "session_duration": 120}
-  4 | 2026-01-28 15:16:04.983+00 | login       | {"userId": 2, "success": true}
-  5 | 2026-01-28 15:17:04.983+00 | error       | {"userId": 2, "message": "Internal Server Error", "error_code": 500}
-(5 rows)
-
